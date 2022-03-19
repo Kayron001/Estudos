@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Oswald';
+            background-color: lightgrey;
+            margin: 0;
+        }
+
+        .cabecalho {
+            background: black;
+            border-bottom: solid 5px steelblue;
+            box-sizing: content-box;
+            height: 80px;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            margin: 20px 15px;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            vertical-align: middle;
+            height: 40px;
+            padding: 10px 20px;
+        }
+
+        .menu {
+            display: inline-block;
+            padding: none;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            display: inline;
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+        }
+
+        .menu a {
+            padding: 15px;
+        }
+
+        .autenticacao {
+            float: right;
+            display: inline;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            color: black;
+            background-color: white;
+        }
+
+        .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .destaque {
+            background-color: red;
+            color: white;
+        }
+
+        @media(min-width: 849px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media(max-width: 850px) {
+
+            .botao,
+            .login {
+                display: none;
+            }
+        }
+
+        @media (max-width: 720px) {
+            #contato {
+                display: none;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+            #sobre {
+                display: none;
+            }
+
+        }
+
+        @media (max-width: 610px) {
+            #cursos {
+                display: none;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+            #inicio {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio" id="inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos" id="cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre" id="sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato" id="contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login" class="login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+
+        window.onhashchange = function (e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldLink && oldLink.classList.remove('selected')
+            newLink && newLink.classList.add('selected')
+        }
+
+    </script>
+</body>
+
+</html>
