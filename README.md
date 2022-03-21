@@ -1,2 +1,2 @@
 # Estudos
-Projetos de Estudos feitos durante as aulas
+Projetos de Estudos feitos durante aulas
