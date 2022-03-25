@@ -1,0 +1,6 @@
+Foi contruido um contador dinâmico onde ele faz a contade crescente ou decrescente de qualquer valor inserido
+contando com o intervalo de numero que for definido.
+Ex.: de 1 em 1 ou de 5 em 5....
+
+Codigo construido durante as aulas de Javascript basico do professor Gustavo Guanabara,
+com curso patrocinado pelo Google.
